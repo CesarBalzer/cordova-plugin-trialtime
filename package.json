@@ -1,0 +1,18 @@
+{
+    "name": "cordova-plugin-trialtime",
+    "cordova_name": "Cordova TrialTime",
+    "version": "0.1.0",
+    "description": "Verifica tempo trial",
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios",
+        "trialtime",
+        "trial"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "author": "Cesar E. Balzer",
+    "license": "Apache version 2.0"
+}
