@@ -35,9 +35,11 @@ Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a d
     }
 
 ```
-O retorno caso os dias de uso estiverem finalizados, será uma mensagem informando:
+Se os dias de uso estiverem finalizados, retornará uma mensagem informando que:
     "O período de utilização gratuíta expirou!"
     "Faça seu registro para continuar utilizando o aplicativo!"
+
+Caso contrário será a quantidade de dias restantes do tempo trial.
 
 Adicione em seu arquivo `index.html` o seguinte código dos botões que vão fazer a chamada das funções:
 
