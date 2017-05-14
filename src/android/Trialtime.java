@@ -29,17 +29,12 @@ public class Trialtime extends CordovaPlugin {
             Integer dias = data.getInt(0);
             SharedPreferences preferences = context.getSharedPreferences("InstallDate", Context.MODE_PRIVATE);
             String installDate = preferences.getString("InstallDate", null);
-            Log.e(LOG_TAG, "Install date ->"+installDate);
-            System.out.println("Install date ->"+installDate);
             if (installDate == null) {
                 SharedPreferences.Editor editor = preferences.edit();
                 Date now = new Date();
                 String dateString = formatter.format(now);
                 editor.putString("InstallDate", dateString);
-//                editor.putString("InstallDate", "2017-04-11");
                 editor.commit();
-                //callbackContext.success("TA VALENDO!");
-                
             } else {
                 Date before;
                 try {
@@ -47,14 +42,10 @@ public class Trialtime extends CordovaPlugin {
                     Date now = new Date();
                     long diff = now.getTime() - before.getTime();
                     long days = diff / ONE_DAY;
-                    System.out.println("DIAS DE USO -> " + days);
                     if (days > dias) { // More than 30 days?
-                        System.out.println("Expirado !!!");
-                        Log.e(LOG_TAG, "EXPIRADO");
                         callbackContext.error("O período de utilização gratuíta expirou!\n Faça seu registro para continuar utilizando o aplicativo!");
                     }else{
                         String dia = Long.toString(days);
-                        Log.d(LOG_TAG, "BAGUA"+days+"#"+dias);
                         callbackContext.success(dia);
                     }
                 } catch (ParseException e) {
