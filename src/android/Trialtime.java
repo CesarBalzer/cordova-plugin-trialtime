@@ -42,6 +42,7 @@ public class Trialtime extends CordovaPlugin {
                     Date now = new Date();
                     long diff = now.getTime() - before.getTime();
                     long days = diff / ONE_DAY;
+                    //Verifica os dias passados desde a instalação
                     if (days > dias) {
                         callbackContext.error("O período de utilização gratuíta expirou!\n Faça seu registro para continuar utilizando o aplicativo!");
                     }else{
