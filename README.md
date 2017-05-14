@@ -5,30 +5,33 @@ quantos dias restam de tempo de utilização baseado na quantidade de dias utili
 
 ## Como utilizar
 
-Crie um novo projeto Cordova:
+Crie um novo projeto Cordova em seu diretório padrão:
 
     $ cordova create trialtime br.com.trialtime Trialtime
     
-Instalando o plugin, entre no diretorio e coloque o endereço do plugin:
+Instalação:
 
-    $ cd trialtime
     $ cordova plugin add https://github.com/CesarBalzer/cordova-plugin-trialtime.git
     
+Preparando o plugin para utilização:
+
+    $ cordova plugin prepare
 
 Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a data de instalação, depois da função de chamada `app.initialize()`
 
 ```js
-    document.getElementById("getDateTime").addEventListener("click", getDataInstalacao);
-	function getDataInstalacao() {
-    	var sucesso = function (mensagem) {
-        	alert(mensagem);
-    }
+    document.getElementById("getDateTime").addEventListener("click", getTrialTime);
+        function getTrialTime() {
+            var sucesso = function (mensagem) {
+                alert(mensagem);
+            }
 
-    var falha = function () {
-        alert("Erro na chamada do plugin");
-    }
+            var falha = function () {
+                alert("Erro na chamada do plugin");
+            }
 
-    TrialTime.getdatetime("br.com.example", sucesso, falha);
+        TrialTime.verificatrial(30, sucesso, falha);
+    }
 }
 ```
 
