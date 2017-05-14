@@ -32,7 +32,7 @@ Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a d
 
         TrialTime.verificatrial(30, sucesso, falha);
     }
-}
+
 ```
 
 
