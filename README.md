@@ -24,7 +24,7 @@ app.initialize();
 document.getElementById("getTrialTime").addEventListener("click", getTrialTime);
     function getTrialTime() {
         var sucesso = function (mensagem) {
-            alert(mensagem);
+            alert(mensagem+" dias passados");
         }
 
         var falha = function () {
