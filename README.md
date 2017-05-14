@@ -19,20 +19,20 @@ Preparando o plugin para utilização:
 Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a data de instalação, depois da função de chamada `app.initialize()`
 
 ```js
-    app.initialize();
-    //
-    document.getElementById("getTrialTime").addEventListener("click", getTrialTime);
-        function getTrialTime() {
-            var sucesso = function (mensagem) {
-                alert(mensagem);
-            }
+app.initialize();
+//
+document.getElementById("getTrialTime").addEventListener("click", getTrialTime);
+    function getTrialTime() {
+        var sucesso = function (mensagem) {
+            alert(mensagem);
+        }
 
-            var falha = function () {
-                alert("Erro na chamada do plugin");
-            }
-            //Informamos 30 dias para verificaçao
-            Trialtime.verificatrial(30, sucesso, falha);
-    }
+        var falha = function () {
+            alert("Erro na chamada do plugin");
+        }
+        //Informamos 30 dias para verificaçao
+        Trialtime.verificatrial(30, sucesso, falha);
+}
 
 ```
 Se os dias de uso estiverem finalizados, retornará uma mensagem informando que:
@@ -44,9 +44,9 @@ Caso contrário será a quantidade de dias restantes do tempo trial.
 Adicione em seu arquivo `index.html` o seguinte código dos botões que vão fazer a chamada das funções:
 
 ```html
-    <div>
-        <p><button id="getTrialTime">Data de instalação</button></p>
-    </div>
+<div>
+    <p><button id="getTrialTime">Data de instalação</button></p>
+</div>
 ```
 
 Instale a plataforma Android em seu projeto
