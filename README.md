@@ -18,7 +18,7 @@ Instalando o plugin, entre no diretorio e coloque o endereço do plugin:
 Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a data de instalação, depois da função de chamada `app.initialize()`
 
 ```js
-	document.getElementById("getDateTime").addEventListener("click", getDataInstalacao);
+    document.getElementById("getDateTime").addEventListener("click", getDataInstalacao);
 	function getDataInstalacao() {
     	var sucesso = function (mensagem) {
         	alert(mensagem);
