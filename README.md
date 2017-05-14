@@ -1,7 +1,6 @@
 # Cordova Plugin Trialtime
 
-Plugin para pegar a data de instalação verificar com o parâmetro de entrada do tempo desejado que deseja verificar,
-quantos dias restam de tempo de utilização baseado na quantidade de dias utilizados desde a instalação do aplicativo em seu aparelho Android, com base da captura de data de instalação do aplicativo via Java.
+Plugin para verificar quantos dias restam do tempo trial definido.
 
 ## Como utilizar
 
@@ -20,28 +19,32 @@ Preparando o plugin para utilização:
 Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a data de instalação, depois da função de chamada `app.initialize()`
 
 ```js
-document.getElementById("getDateTime").addEventListener("click", getTrialTime);
-    function getTrialTime() {
-        var sucesso = function (mensagem) {
-            alert(mensagem);
-        }
+    app.initialize();
+    //
+    document.getElementById("getTrialTime").addEventListener("click", getTrialTime);
+        function getTrialTime() {
+            var sucesso = function (mensagem) {
+                alert(mensagem);
+            }
 
-        var falha = function () {
-            alert("Erro na chamada do plugin");
-        }
-
-    TrialTime.verificatrial(30, sucesso, falha);
-}
+            var falha = function () {
+                alert("Erro na chamada do plugin");
+            }
+            //Informamos 30 dias para verificaçao
+            Trialtime.verificatrial(30, sucesso, falha);
+    }
 
 ```
-
+O retorno caso os dias de uso estiverem finalizados, será uma mensagem informando:
+    "O período de utilização gratuíta expirou!"
+    "Faça seu registro para continuar utilizando o aplicativo!"
 
 Adicione em seu arquivo `index.html` o seguinte código dos botões que vão fazer a chamada das funções:
 
 ```html
-	   <div>
-            <p><button id="getTrialTime">Data de instalação</button></p>
-       </div>
+    <div>
+        <p><button id="getTrialTime">Data de instalação</button></p>
+    </div>
 ```
 
 Instale a plataforma Android em seu projeto
