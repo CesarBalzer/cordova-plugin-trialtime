@@ -20,18 +20,18 @@ Preparando o plugin para utilização:
 Edite seu arquivo `www/js/index.js` e adicione o seguinte código para pegar a data de instalação, depois da função de chamada `app.initialize()`
 
 ```js
-    document.getElementById("getDateTime").addEventListener("click", getTrialTime);
-        function getTrialTime() {
-            var sucesso = function (mensagem) {
-                alert(mensagem);
-            }
+document.getElementById("getDateTime").addEventListener("click", getTrialTime);
+    function getTrialTime() {
+        var sucesso = function (mensagem) {
+            alert(mensagem);
+        }
 
-            var falha = function () {
-                alert("Erro na chamada do plugin");
-            }
+        var falha = function () {
+            alert("Erro na chamada do plugin");
+        }
 
-        TrialTime.verificatrial(30, sucesso, falha);
-    }
+    TrialTime.verificatrial(30, sucesso, falha);
+}
 
 ```
 
@@ -41,11 +41,10 @@ Adicione em seu arquivo `index.html` o seguinte código dos botões que vão faz
 ```html
 	   <div>
             <p><button id="getTrialTime">Data de instalação</button></p>
-            <p><button id="getUpdateTime">Data de atualização</button></p>
        </div>
 ```
 
-Instale a plataforma Android
+Instale a plataforma Android em seu projeto
 
     cordova platform add android
     
